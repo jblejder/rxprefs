@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RxPrefs.iml" filepath="$PROJECT_DIR$/RxPrefs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxprefs/rxprefs.iml" filepath="$PROJECT_DIR$/rxprefs/rxprefs.iml" />
+    </modules>
+  </component>
+</project>
