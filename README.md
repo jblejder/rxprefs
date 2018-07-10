@@ -1,3 +1,6 @@
+[![](https://jitpack.io/v/jblejder/rxprefs.svg)](https://jitpack.io/#jblejder/rxprefs)
+
+
 # RxPrefs
 Reactive Extensions for Android SharedPreferences.
 
@@ -41,3 +44,20 @@ If you want to read custom values from preferences you can use your own listener
 
     rxPrefs.custom(publisher: OnPrefsChangedPublisher<T>)
     
+## Gradle
+
+1. Add the JitPack repository to your build file
+Add it in your root build.gradle at the end of repositories:
+
+        allprojects {
+                repositories {
+                        ...
+                        maven { url 'https://jitpack.io' }
+                }
+        }
+        
+2. Add the dependency
+        
+        dependencies {
+	        implementation 'com.github.jblejder:rxprefs:0.1'
+        }
