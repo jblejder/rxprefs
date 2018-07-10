@@ -51,7 +51,7 @@ class RxPrefs(val sharedPreferences: SharedPreferences) {
     }
 
     fun all(): Observable<Map<String, *>> {
-        return PrefsChangedObservable(sharedPreferences) { observer, prefs, _ -> observer.onNext(sharedPreferences.all) }
+        return PrefsChangedObservable(sharedPreferences, onPrefsChanged { observer, sharedPreferences, updatedKey -> observer.onNext(sharedPreferences.all) })
     }
 
     fun <T> custom(publisher: OnPrefsChangedPublisher<T>): Observable<T> {

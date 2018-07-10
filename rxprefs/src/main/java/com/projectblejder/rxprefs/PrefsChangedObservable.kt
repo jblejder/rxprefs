@@ -11,9 +11,11 @@ class PrefsChangedObservable<T>(
         private val publisher: OnPrefsChangedPublisher<T>
 ) : Observable<T>() {
 
+    var listener: PrefsListener<T>? = null
+
     override fun subscribeActual(observer: Observer<in T>) {
-        val listener = PrefsListener(sharedPreferences, observer, publisher)
-        observer.onSubscribe(listener)
+        listener = PrefsListener(sharedPreferences, observer, publisher)
+        observer.onSubscribe(listener!!)
         sharedPreferences.registerOnSharedPreferenceChangeListener(listener)
     }
 
@@ -31,7 +33,7 @@ class PrefsChangedObservable<T>(
             if (isDisposed) {
                 return
             }
-            publisher.invoke(observer, sharedPreferences, key)
+            publisher.onChange(observer, sharedPreferences, key)
         }
     }
 }
