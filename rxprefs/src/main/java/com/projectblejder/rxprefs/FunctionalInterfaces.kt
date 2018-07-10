@@ -25,6 +25,5 @@ fun <T> onPrefsChanged(lambda: (observer: Observer<in T>, sharedPreferences: Sha
         override fun onChange(observer: Observer<in T>, sharedPreferences: SharedPreferences, updatedKey: String) {
             lambda(observer, sharedPreferences, updatedKey)
         }
-
     }
 }

@@ -11,7 +11,7 @@ internal object Readers {
 
     fun stringSets(default: Set<String>): ValueReader<Set<String>> = valueReader { pref, key -> pref.getStringSet(key, default) }
 
-    val stringSets: ValueReader<Set<String>> = valueReader { pref, key -> pref.getStringSet(key, null) }
+    val stringSets: ValueReader<Changed<Set<String>?>> = valueReader { pref, key -> Changed(pref.getStringSet(key, null)) }
 
     fun long(default: Long): ValueReader<Long> = valueReader { pref, key -> pref.getLong(key, default) }
 

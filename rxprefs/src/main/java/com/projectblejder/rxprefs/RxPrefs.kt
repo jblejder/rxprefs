@@ -34,7 +34,7 @@ class RxPrefs(val sharedPreferences: SharedPreferences) {
         return PrefsChangedObservable(sharedPreferences, defaultChangePublisher(key, stringSets(default)))
     }
 
-    fun stringSet(key: String): Observable<Set<String>> {
+    fun stringSet(key: String): Observable<Changed<Set<String>?>> {
         return PrefsChangedObservable(sharedPreferences, defaultChangePublisher(key, stringSets))
     }
 
